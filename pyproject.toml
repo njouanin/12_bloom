@@ -4,26 +4,25 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "bloom"
-version = "0.1.0"
+version = "0.2.0"
 description = "Bloom scrapping application"
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-alembic = "^1.10.2"
-autopep8 = "1.5.4"
+alembic = "^1.13.1"
 dependency-injector = "^4.41.0"
 dependency_injection = "1.2.0"
 folium = "^0.14.0"
-geoalchemy2 = "^0.13.1"
+geoalchemy2 = "^0.14.6"
 geopandas = "0.14.3"
 geopy = "^2.4.0"
-gql = "^3.4.0"
+gql = "^3.5.0"
 matplotlib = "^3.8.0"
 openpyxl = "^3.1.0"
-pandas = "1.4.4"
+pandas = "2.2.1"
 poetry = "^1.8"
 psycopg2-binary = "^2.9.6"
-pydantic = "1.10.14"
+pydantic = "2.6.3"
 python = ">=3.9,<3.9.7 || >3.9.7,<3.12"
 python-dotenv = "^1.0.0"
 pyyaml = "^6.0"
@@ -34,11 +33,12 @@ slack-sdk = "^3.21.3"
 sqlalchemy = "^2.0"
 streamlit = "^1.27.2"
 streamlit-folium = "^0.15.0"
+pydantic-settings = "^2.2.1"
 
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.0.3"
-ruff = "^0.0.254"
+ruff = "^0.3.2"
 tox = "^4.4.8"
 
 [tool.ruff]

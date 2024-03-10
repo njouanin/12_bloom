@@ -53,7 +53,7 @@ class VesselTrajectory:
             self.positions = self.compute_angle(self.positions)
             self.positions = self.compute_change_direction_flag(self.positions, 50)
             self.positions = self.compute_change_direction_flag(self.positions, 150)
-            self.positions = self.compute_rolling_deviation(self.positions, "3H")
+            self.positions = self.compute_rolling_deviation(self.positions, "3h")
 
     # def __init__(self, data: pd.DataFrame,vessel_id = None,crs = "EPSG:3857"):
 
@@ -73,7 +73,7 @@ class VesselTrajectory:
 
     @property
     def centroid(self) -> tuple[float, float]:
-          # Make sure that your GeoDataFrame is named gdf and has a column 'geometry'
+        # Make sure that your GeoDataFrame is named gdf and has a column 'geometry'
         all_points = MultiPoint(self.positions["geometry"].unary_union)
         centroid = all_points.centroid
 
@@ -87,7 +87,7 @@ class VesselTrajectory:
         return None
 
     @mpas.setter
-    def mpas(self, value:[])->None:
+    def mpas(self, value: []) -> None:
         self._mpas = value
 
     def get_closest_marine_protected_areas(self, radius: int = 100) -> None:
