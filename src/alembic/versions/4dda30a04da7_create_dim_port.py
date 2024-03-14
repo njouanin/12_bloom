@@ -10,6 +10,7 @@ from alembic import op
 import sqlalchemy as sa
 from geoalchemy2 import Geometry
 from bloom.config import settings
+from sqlalchemy.sql import func
 
 
 # revision identifiers, used by Alembic.
@@ -30,8 +31,8 @@ def upgrade() -> None:
         sa.Column("longitude", sa.Double),
         sa.Column("country_iso3", sa.String),
         sa.Column("has_excursion", sa.Boolean, default=False),
-        sa.Column("created_at", sa.DateTime(timezone=True)),
-        sa.Column("updated_at", sa.DateTime(timezone=True)),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=func.now()),
+        sa.Column("updated_at", sa.DateTime(timezone=True), onupdate=func.now()),
     )
 
 
